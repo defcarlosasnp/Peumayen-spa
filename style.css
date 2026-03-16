@@ -275,37 +275,39 @@ footer {
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     header {
-        padding: 0.5rem 0;
+        padding: 10px 0;
     }
 
     nav ul {
+        display: grid; /* Cambiamos a rejilla para control total */
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
         gap: 10px;
-        flex-wrap: wrap;
-        padding: 5px 10px;
+        padding: 0 15px;
+        justify-items: center;
     }
 
     nav ul li a {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         letter-spacing: 0px;
+        white-space: nowrap; /* Evita que una palabra se parta en dos */
     }
 
+    /* El botón de contacto lo mandamos abajo solo si quieres, 
+       o dejamos que el grid acomode todo */
+    
     #hero {
         background-attachment: scroll !important;
         background-position: center center !important;
-        height: 80vh; 
+        height: 70vh; 
     }
 
     .hero-content h1 {
-        font-size: 2.5rem !important;
-        padding: 0 15px;
-    }
-
-    .hero-content p {
-        font-size: 1.1rem;
+        font-size: 2.2rem !important;
+        padding: 0 10px;
     }
 
     h2 {
-        font-size: 2.2rem !important;
+        font-size: 2rem !important;
     }
 
     .servicios-grid {
@@ -313,29 +315,19 @@ footer {
         padding: 0 20px;
     }
 
-    .servicio-card {
-        padding: 30px 20px;
-    }
-
     .galeria-item {
-        height: 300px;
+        height: 250px;
     }
 
     .contacto-container {
-        padding: 30px 20px;
-        margin: 0 10px;
-    }
-
-    .map-container {
-        height: 300px;
-        margin: 30px 10px;
+        padding: 30px 15px;
     }
 
     .wsp-float {
-        width: 60px;
-        height: 60px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 30px;
+        width: 55px;
+        height: 55px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 28px;
     }
 }
