@@ -285,15 +285,11 @@ footer {
     transform: translateY(-2px);
 }
 @media (max-width: 768px) {
-    /* Ajuste del menú */
-    nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        padding: 10px;
-    }
-
-    nav ul li a {
-        font-size: 0.75rem;
+    #hero {
+        background-attachment: scroll !important;
+        background-position: center center !important;
+        /* Esto asegura que la imagen se vea bien en pantallas verticales */
+        height: 80vh; 
     }
 
     /* Ajuste del Hero (Título principal) */
