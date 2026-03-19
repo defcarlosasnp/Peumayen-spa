@@ -82,21 +82,20 @@
         <section id="paquetes">
             <h2 data-aos="fade-up">Paquetes Especiales</h2>
             <div class="paquetes-container">
-                <div class="paquete-card" data-aos="flip-left">
-                    <div class="paquete-tag">Más Popular</div>
+                <div class="paquete-card" data-aos="fade-up">
                     <h3>Día de Campo</h3>
                     <div class="precio">$150.000 <span>/ día</span></div>
                     <ul>
                         <li><i class="fas fa-check"></i> Acceso a Piscina</li>
-                        <li><i class="fas fa-check"></i> Quincho ElrincondeManrico</li>
+                        <li><i class="fas fa-check"></i> ElrincondeManrico</li>
                         <li><i class="fas fa-check"></i> Áreas Verdes</li>
                         <li><i class="fas fa-times"></i> Tinaja Nocturna</li>
                     </ul>
                     <button class="btn-paquete" onclick="selectPackage('Día de Campo')">Elegir Plan</button>
                 </div>
 
-                <div class="paquete-card destacado" data-aos="flip-left" data-aos-delay="200">
-                    <div class="paquete-tag">Premium</div>
+                <div class="paquete-card destacado" data-aos="fade-up" data-aos-delay="200">
+                    <div class="paquete-tag">Recomendado Premium</div>
                     <h3>Fin de Semana Full</h3>
                     <div class="precio">$350.000 <span>/ total</span></div>
                     <ul>
@@ -108,7 +107,7 @@
                     <button class="btn-paquete" onclick="selectPackage('Fin de Semana Full')">Elegir Plan</button>
                 </div>
 
-                <div class="paquete-card" data-aos="flip-left" data-aos-delay="400">
+                <div class="paquete-card" data-aos="fade-up" data-aos-delay="400">
                     <h3>Evento Especial</h3>
                     <div class="precio">Consultar</div>
                     <ul>
@@ -193,39 +192,19 @@
             uniqueImages: true
         });
 
-        // Función para manejar la selección de paquetes
         function selectPackage(packageName) {
             const contactSection = document.getElementById('contacto');
             const messageArea = document.getElementById('mensaje');
-            
-            // Ponemos el foco en el nombre para que el usuario empiece a escribir
             document.getElementById('nombre').focus();
-            
-            // Pre-llenamos el área de mensaje con el paquete seleccionado
             messageArea.value = `Hola, me interesa el paquete: ${packageName}. `;
-            
-            // Scroll suave al formulario
             contactSection.scrollIntoView({ behavior: 'smooth' });
         }
 
         function sendToWhatsApp() {
             const nom = document.getElementById('nombre').value;
             const msg = document.getElementById('mensaje').value;
-            
-            if(!nom) {
-                alert("Por favor ingresa tu nombre");
-                document.getElementById('nombre').focus();
-                return;
-            }
-            if(!msg) {
-                alert("Por favor ingresa un mensaje");
-                document.getElementById('mensaje').focus();
-                return;
-            }
-
-            const textoWhatsApp = `Hola, soy ${nom}. ${msg}`;
-            const url = `https://wa.me/56926942030?text=${encodeURIComponent(textoWhatsApp)}`;
-            window.open(url, '_blank');
+            if(!nom || !msg) return alert("Por favor completa los campos");
+            window.open(`https://wa.me/56926942030?text=Hola, soy ${nom}. ${msg}`, '_blank');
         }
     </script>
 </body>
