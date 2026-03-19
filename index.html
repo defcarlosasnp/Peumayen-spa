@@ -22,6 +22,7 @@
             <ul>
                 <li><a href="#hero">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#paquetes">Paquetes</a></li>
                 <li><a href="#galeria">Galería</a></li>
                 <li><a href="#ubicacion">Ubicación</a></li>
                 <li><a href="#contacto">Contacto</a></li>
@@ -79,47 +80,48 @@
         </section>
 
         <section id="paquetes">
-    <h2 data-aos="fade-up">Paquetes Especiales</h2>
-    <div class="paquetes-container">
-        <div class="paquete-card" data-aos="flip-left">
-            <div class="paquete-tag">Más Popular</div>
-            <h3>Día de Campo</h3>
-            <div class="precio">$150.000 <span>/ día</span></div>
-            <ul>
-                <li><i class="fas fa-check"></i> Acceso a Piscina</li>
-                <li><i class="fas fa-check"></i> Quincho ElrincondeManrico</li>
-                <li><i class="fas fa-check"></i> Áreas Verdes</li>
-                <li><i class="fas fa-times"></i> Tinaja Nocturna</li>
-            </ul>
-            <a href="#contacto" class="btn-paquete">Elegir Plan</a>
-        </div>
+            <h2 data-aos="fade-up">Paquetes Especiales</h2>
+            <div class="paquetes-container">
+                <div class="paquete-card" data-aos="flip-left">
+                    <div class="paquete-tag">Más Popular</div>
+                    <h3>Día de Campo</h3>
+                    <div class="precio">$150.000 <span>/ día</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Acceso a Piscina</li>
+                        <li><i class="fas fa-check"></i> Quincho ElrincondeManrico</li>
+                        <li><i class="fas fa-check"></i> Áreas Verdes</li>
+                        <li><i class="fas fa-times"></i> Tinaja Nocturna</li>
+                    </ul>
+                    <button class="btn-paquete" onclick="selectPackage('Día de Campo')">Elegir Plan</button>
+                </div>
 
-        <div class="paquete-card destacado" data-aos="flip-left" data-aos-delay="200">
-            <div class="paquete-tag">Premium</div>
-            <h3>Fin de Semana Full</h3>
-            <div class="precio">$350.000 <span>/ total</span></div>
-            <ul>
-                <li><i class="fas fa-check"></i> Todo lo del Día de Campo</li>
-                <li><i class="fas fa-check"></i> Tinaja Caliente</li>
-                <li><i class="fas fa-check"></i> Sauna Incluido</li>
-                <li><i class="fas fa-check"></i> Estacionamiento Privado</li>
-            </ul>
-            <a href="#contacto" class="btn-paquete">Elegir Plan</a>
-        </div>
+                <div class="paquete-card destacado" data-aos="flip-left" data-aos-delay="200">
+                    <div class="paquete-tag">Premium</div>
+                    <h3>Fin de Semana Full</h3>
+                    <div class="precio">$350.000 <span>/ total</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Todo lo del Día de Campo</li>
+                        <li><i class="fas fa-check"></i> Tinaja Caliente</li>
+                        <li><i class="fas fa-check"></i> Sauna Incluido</li>
+                        <li><i class="fas fa-check"></i> Estacionamiento Privado</li>
+                    </ul>
+                    <button class="btn-paquete" onclick="selectPackage('Fin de Semana Full')">Elegir Plan</button>
+                </div>
 
-        <div class="paquete-card" data-aos="flip-left" data-aos-delay="400">
-            <h3>Evento Especial</h3>
-            <div class="precio">Consultar</div>
-            <ul>
-                <li><i class="fas fa-check"></i> Exclusividad Total</li>
-                <li><i class="fas fa-check"></i> Capacidad Ampliada</li>
-                <li><i class="fas fa-check"></i> Coordinación de Servicios</li>
-                <li><i class="fas fa-check"></i> Mobiliario Básico</li>
-            </ul>
-            <a href="#contacto" class="btn-paquete">Cotizar</a>
-        </div>
-    </div>
-</section>
+                <div class="paquete-card" data-aos="flip-left" data-aos-delay="400">
+                    <h3>Evento Especial</h3>
+                    <div class="precio">Consultar</div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Exclusividad Total</li>
+                        <li><i class="fas fa-check"></i> Capacidad Ampliada</li>
+                        <li><i class="fas fa-check"></i> Coordinación de Servicios</li>
+                        <li><i class="fas fa-check"></i> Mobiliario Básico</li>
+                    </ul>
+                    <button class="btn-paquete" onclick="selectPackage('Evento Especial')">Cotizar</button>
+                </div>
+            </div>
+        </section>
+
         <section id="galeria">
             <h2 data-aos="fade-right">Galería</h2>
             <div class="splide" id="image-carousel">
@@ -191,11 +193,39 @@
             uniqueImages: true
         });
 
+        // Función para manejar la selección de paquetes
+        function selectPackage(packageName) {
+            const contactSection = document.getElementById('contacto');
+            const messageArea = document.getElementById('mensaje');
+            
+            // Ponemos el foco en el nombre para que el usuario empiece a escribir
+            document.getElementById('nombre').focus();
+            
+            // Pre-llenamos el área de mensaje con el paquete seleccionado
+            messageArea.value = `Hola, me interesa el paquete: ${packageName}. `;
+            
+            // Scroll suave al formulario
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
         function sendToWhatsApp() {
             const nom = document.getElementById('nombre').value;
             const msg = document.getElementById('mensaje').value;
-            if(!nom || !msg) return alert("Por favor completa los campos");
-            window.open(`https://wa.me/56926942030?text=Hola, soy ${nom}. Consulta: ${msg}`, '_blank');
+            
+            if(!nom) {
+                alert("Por favor ingresa tu nombre");
+                document.getElementById('nombre').focus();
+                return;
+            }
+            if(!msg) {
+                alert("Por favor ingresa un mensaje");
+                document.getElementById('mensaje').focus();
+                return;
+            }
+
+            const textoWhatsApp = `Hola, soy ${nom}. ${msg}`;
+            const url = `https://wa.me/56926942030?text=${encodeURIComponent(textoWhatsApp)}`;
+            window.open(url, '_blank');
         }
     </script>
 </body>
