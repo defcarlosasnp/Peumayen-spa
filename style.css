@@ -328,7 +328,111 @@ footer { background: #12231a; color: rgba(255,255,255,0.7); text-align: center; 
 .btn-paquete:hover {
     background: var(--gold);
 }
+#paquetes {
+    padding: 100px 20px;
+    background-color: var(--white);
+    text-align: center;
+}
 
+.paquetes-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 50px auto 0;
+}
+
+.paquete-card {
+    background: var(--bg-light);
+    padding: 40px 30px;
+    border-radius: 25px;
+    width: 320px;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.paquete-card.destacado {
+    border: 2px solid var(--gold);
+    transform: scale(1.05);
+    background: var(--white);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.paquete-tag {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.paquete-card h3 {
+    color: var(--forest);
+    margin-bottom: 15px;
+}
+
+.precio {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+}
+
+.precio span { font-size: 1rem; color: #888; }
+
+.paquete-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.paquete-card ul li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.paquete-card ul li i { margin-right: 10px; }
+.fa-check { color: #28a745; }
+.fa-times { color: #dc3545; }
+
+.btn-paquete {
+    background: var(--forest);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-paquete:hover {
+    background: var(--gold);
+    transform: translateY(-2px);
+}
+
+/* Ajuste móvil para paquetes en el @media que ya tienes */
+@media (max-width: 768px) {
+    .paquete-card.destacado {
+        transform: scale(1);
+        margin: 20px 0;
+    }
+    .paquetes-container {
+        gap: 40px;
+    }
+}
 /* Ajuste móvil para paquetes */
 @media (max-width: 768px) {
     .paquete-card.destacado {
