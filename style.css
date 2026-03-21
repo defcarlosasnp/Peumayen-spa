@@ -94,3 +94,28 @@ h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--for
     nav ul li a { color: var(--forest); font-size: 0.65rem; }
     .decorated-section::before, .decorated-section::after { display: none; }
 }
+/* Asegura que la galería use todo el ancho disponible dentro del contenedor */
+#image-carousel {
+    padding: 20px 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.galeria-item {
+    height: 450px; 
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0; /* Splide maneja el espacio con 'gap' */
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Evita que las hojas decorativas se pongan encima de las flechas de la galería */
+.splide__arrow {
+    z-index: 10;
+}
