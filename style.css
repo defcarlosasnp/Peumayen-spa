@@ -278,54 +278,47 @@ h2 {
 
 /* --- RESPONSIVE FINAL --- */
 /* --- RESPONSIVE FINAL CORREGIDO --- */
+/* --- RESPONSIVE FINAL (CON SALTO DE LÍNEA EN EL MENÚ) --- */
 @media (max-width: 768px) {
     header { 
         background: white !important; 
-        padding: 10px 0 !important;
+        padding: 15px 0 !important;
+        position: relative !important; /* Permite que el header crezca hacia abajo sin tapar nada */
         width: 100% !important;
         left: 0;
         right: 0;
     }
     
-    /* Este bloque permite que el menú se deslice horizontalmente sin cortarse */
     nav ul { 
         display: flex !important;
-        flex-wrap: nowrap !important; /* Evita que las palabras bajen */
-        overflow-x: auto !important; /* Permite deslizar con el dedo hacia los lados */
-        justify-content: flex-start !important; /* Alinea al inicio para el scroll */
-        gap: 20px !important; 
-        padding: 10px 20px !important; 
+        flex-wrap: wrap !important; /* LA CLAVE: Hace que los títulos bajen si no caben */
+        justify-content: center !important; /* Centra los títulos que bajaron */
+        gap: 10px 15px !important; /* Espacio vertical y horizontal entre botones */
+        padding: 5px 15px !important; 
         width: 100% !important;
-        -webkit-overflow-scrolling: touch; /* Suaviza el scroll en iPhone */
-    }
-
-    /* Ocultar la barra de scroll para que se vea más limpio */
-    nav ul::-webkit-scrollbar {
-        display: none;
+        overflow-x: hidden !important; /* Quita el deslizamiento lateral */
     }
 
     nav ul li { 
-        flex: 0 0 auto; /* Evita que las palabras se compriman o se deformen */
+        flex: none !important; /* Deja que el texto mande el ancho */
+        list-style: none;
     }
 
     nav ul li a { 
         color: var(--forest) !important; 
         font-size: 0.75rem !important; 
-        white-space: nowrap !important; /* Prohíbe que el texto se parta en dos líneas */
-        font-weight: 600;
+        font-weight: 700;
+        white-space: nowrap; /* Evita que una palabra sola se parta */
+        text-transform: uppercase;
     }
     
-    /* Ajustes extras para el resto de la página en móvil */
+    /* Ajustes generales para el resto de la web en móvil */
     #hero { height: 70vh; }
     .hero-content h1 { font-size: 2.2rem !important; }
-    .servicio-card, .paquete-card { width: 100% !important; }
-    .contacto-container { padding: 30px 20px; }
+    .servicio-card, .paquete-card { width: 100% !important; margin-bottom: 20px; }
+    .contacto-container { padding: 40px 20px; width: 100% !important; }
     .decorated-section::before, .decorated-section::after { display: none; }
-}
-    
-    .servicio-card, .paquete-card { width: 100% !important; }
-    .contacto-container { padding: 40px 20px; }
-    .galeria-item { height: 280px; }
+    .galeria-item { height: 250px; }
     .map-container { height: 350px; }
     #servicios, #paquetes, #galeria, #ubicacion, #contacto { padding: 50px 0; }
 }
