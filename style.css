@@ -277,23 +277,51 @@ h2 {
 }
 
 /* --- RESPONSIVE FINAL --- */
+/* --- RESPONSIVE FINAL CORREGIDO --- */
 @media (max-width: 768px) {
-    header { background: white !important; padding: 10px 0 !important; }
-    
-    /* Menú deslizable horizontal en móvil */
-    nav ul {
-        justify-content: flex-start !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        padding: 10px 20px !important;
-        gap: 20px !important;
-        -webkit-overflow-scrolling: touch;
+    header { 
+        background: white !important; 
+        padding: 10px 0 !important;
+        width: 100% !important;
+        left: 0;
+        right: 0;
     }
-    nav ul::-webkit-scrollbar { display: none; }
-    nav ul li { flex: 0 0 auto; }
-    nav ul li a { color: var(--forest) !important; font-size: 0.75rem !important; white-space: nowrap; }
+    
+    /* Este bloque permite que el menú se deslice horizontalmente sin cortarse */
+    nav ul { 
+        display: flex !important;
+        flex-wrap: nowrap !important; /* Evita que las palabras bajen */
+        overflow-x: auto !important; /* Permite deslizar con el dedo hacia los lados */
+        justify-content: flex-start !important; /* Alinea al inicio para el scroll */
+        gap: 20px !important; 
+        padding: 10px 20px !important; 
+        width: 100% !important;
+        -webkit-overflow-scrolling: touch; /* Suaviza el scroll en iPhone */
+    }
 
+    /* Ocultar la barra de scroll para que se vea más limpio */
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav ul li { 
+        flex: 0 0 auto; /* Evita que las palabras se compriman o se deformen */
+    }
+
+    nav ul li a { 
+        color: var(--forest) !important; 
+        font-size: 0.75rem !important; 
+        white-space: nowrap !important; /* Prohíbe que el texto se parta en dos líneas */
+        font-weight: 600;
+    }
+    
+    /* Ajustes extras para el resto de la página en móvil */
+    #hero { height: 70vh; }
+    .hero-content h1 { font-size: 2.2rem !important; }
+    .servicio-card, .paquete-card { width: 100% !important; }
+    .contacto-container { padding: 30px 20px; }
     .decorated-section::before, .decorated-section::after { display: none; }
+}
     
     .servicio-card, .paquete-card { width: 100% !important; }
     .contacto-container { padding: 40px 20px; }
