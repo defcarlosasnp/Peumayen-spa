@@ -37,12 +37,12 @@ nav ul li a:hover { color: var(--gold) !important; }
 .btn-primary:hover { background-color: var(--gold-dark); transform: translateY(-3px); }
 
 /* --- SECCIONES --- */
-h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--forest); text-align: center; margin-bottom: 3rem; } /* Aumentado margen para la etiqueta */
+h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--forest); text-align: center; margin-bottom: 4.5rem; } /* Margen aumentado para dar aire a la etiqueta */
 #servicios, #paquetes, #galeria, #ubicacion, #contacto { padding: 80px 0; }
 .bg-white { background-color: white; }
 
 /* --- TARJETAS --- */
-.servicios-grid, .paquetes-container { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 50px; }
+.servicios-grid, .paquetes-container { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 40px; }
 .servicio-card, .paquete-card { 
     background: var(--white); 
     padding: 40px 25px; 
@@ -54,6 +54,7 @@ h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--for
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    margin-top: 20px; /* Margen superior base para todas */
 }
 .servicio-card:hover { background: var(--grad-nature); color: white; transform: translateY(-10px); }
 .icon-box { font-size: 3rem; color: var(--gold); margin-bottom: 1rem; }
@@ -61,9 +62,14 @@ h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--for
 
 /* --- PAQUETES FIX --- */
 .paquete-card { position: relative; }
-.paquete-card.destacado { border: 2px solid var(--gold); transform: scale(1.05); z-index: 10; }
+.paquete-card.destacado { 
+    border: 2px solid var(--gold); 
+    transform: scale(1.05); 
+    z-index: 10; 
+    margin-top: 20px; /* Asegura que al crecer no pise el título */
+}
 
-/* Corrección de la etiqueta Recomendado */
+/* Etiqueta Recomendado Fijada */
 .paquete-tag { 
     position: absolute; 
     top: -15px; 
@@ -77,10 +83,11 @@ h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--for
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     white-space: nowrap;
+    z-index: 11;
 }
 
 .precio { font-size: 1.8rem; font-weight: 700; margin: 20px 0; color: var(--forest); }
-.paquete-card ul { list-style: none; padding: 0; margin-bottom: 30px; text-align: left; flex-grow: 1; }
+.paquete-card ul { list-style: none; padding: 0; margin: 10px 0 30px 0; text-align: left; flex-grow: 1; }
 .paquete-card ul li { margin-bottom: 12px; font-size: 0.9rem; display: flex; align-items: center; }
 .fa-check { color: #28a745; margin-right: 12px; }
 
@@ -104,7 +111,7 @@ h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--for
 
 /* --- CONTACTO --- */
 #contacto { background: var(--grad-nature); color: white; }
-.contacto-container { max-width: 600px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); padding: 45px; border-radius: 35px; border: 1px solid rgba(255, 255, 255, 0.1); box-sizing: border-box; text-align: center; }
+.contacto-container { max-width: 600px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); padding: 45px; border-radius: 35px; border: 1px solid rgba(255, 255, 255, 0.1); box-sizing: border-box; text-align: center; }
 #contacto input, #contacto textarea { width: 100%; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 15px; color: white; margin-bottom: 15px; border-radius: 10px; box-sizing: border-box; font-family: inherit; }
 .instagram-link { color: white !important; text-decoration: none !important; transition: 0.3s; font-weight: 500; }
 .instagram-link:hover { color: var(--gold) !important; }
@@ -118,7 +125,7 @@ footer { background: #0e1a14; color: white; text-align: center; padding: 3rem 0;
     header { background: white !important; padding: 10px 0 !important; position: relative !important; width: 100% !important; }
     nav ul { flex-wrap: wrap !important; justify-content: center !important; gap: 10px 15px !important; padding: 5px 15px !important; }
     nav ul li a { color: var(--forest) !important; font-size: 0.75rem !important; font-weight: 700; }
-    .servicio-card, .paquete-card { width: 100% !important; transform: none !important; }
+    .servicio-card, .paquete-card { width: 100% !important; transform: none !important; margin-top: 10px !important; }
     .hero-content h1 { font-size: 2.2rem !important; }
     #servicios, #paquetes, #galeria, #ubicacion, #contacto { padding: 40px 0; }
     .decorated-section::before, .decorated-section::after { display: none; }
