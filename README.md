@@ -1,6 +1,6 @@
 # Casona en Arriendo
 
-Este es un esqueleto básico en PHP para promocionar una casona para arriendo que incluye piscina, quincho y sauna.
+promocionar una casona para arriendo que incluye piscina, quincho y sauna.
 
 ## Estructura del Proyecto
 
