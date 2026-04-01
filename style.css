@@ -9,11 +9,9 @@
     --grad-nature: linear-gradient(135deg, #1e3a2b 0%, #345e45 100%);
 }
 
-/* --- BASE RESTAURADA --- */
 body { font-family: 'Poppins', sans-serif; background-color: var(--bg-light); color: var(--text-dark); margin: 0; padding: 0; overflow-x: hidden; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 5; box-sizing: border-box; }
 
-/* --- DECORACIONES --- */
 .decorated-section { position: relative; overflow: hidden; }
 .decorated-section::before, .decorated-section::after {
     content: '\f4d8'; font-family: "Font Awesome 6 Free"; font-weight: 900;
@@ -22,7 +20,6 @@ body { font-family: 'Poppins', sans-serif; background-color: var(--bg-light); co
 .decorated-section::before { top: -40px; left: -40px; font-size: 15rem; transform: rotate(-15deg); }
 .decorated-section::after { bottom: -60px; right: -40px; font-size: 18rem; transform: rotate(160deg); }
 
-/* --- HEADER --- */
 header { background: transparent; padding: 1.5rem 0; position: fixed; width: 100%; z-index: 2000; transition: 0.4s ease; top: 0; left: 0; }
 header.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 0.8rem 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 nav ul { display: flex; justify-content: center; gap: 30px; list-style: none; margin: 0; padding: 0; }
@@ -30,147 +27,79 @@ nav ul li a { text-decoration: none; color: white; font-weight: 600; text-transf
 header.scrolled nav ul li a { color: var(--forest); }
 nav ul li a:hover { color: var(--gold) !important; }
 
-/* --- HERO CON FIX DE CONTRASTE --- */
 #hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('fondo.jpg') no-repeat center center/cover; display: flex; justify-content: center; align-items: center; text-align: center; color: white; }
-.hero-content h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5rem); margin: 0; text-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-.hero-content p { font-size: 1.2rem; font-weight: 300; letter-spacing: 1px; margin-top: 10px; text-shadow: 0 4px 8px rgba(0,0,0,0.3); }
+.hero-content h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5rem); margin: 0; }
 .btn-primary { display: inline-block; margin-top: 2rem; padding: 1rem 2.5rem; background-color: var(--gold); color: white !important; text-decoration: none; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; transition: 0.3s; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.2); cursor: pointer; }
-.btn-primary:hover { background-color: var(--gold-dark); transform: translateY(-3px); }
 
-/* --- SECCIONES --- */
-h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--forest); text-align: center; margin-bottom: 5rem; position: relative; } /* Margen aumentado para seguridad */
-#servicios, #paquetes, #galeria, #ubicacion, #contacto { padding: 100px 0; }
-.bg-white { background-color: white; }
+#promo { padding: 80px 0; background-color: var(--bg-alt); }
+.promo-card { background: var(--forest); color: var(--white); border-radius: 30px; padding: 50px; text-align: center; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.15); border: 2px solid var(--gold); }
+.promo-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--white); padding: 8px 25px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; white-space: nowrap; }
+.promo-card h2 { color: var(--gold); margin-bottom: 10px; font-size: 2.5rem; }
+.promo-subtitle { font-size: 1.1rem; font-weight: 300; margin-bottom: 35px; }
+.promo-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-bottom: 30px; text-align: left; }
+.promo-features ul { list-style: none; padding: 0; margin: 0; }
+.promo-features li { margin-bottom: 15px; font-size: 1.05rem; display: flex; align-items: center; gap: 12px; }
+.promo-features i { color: var(--gold); font-size: 1.2rem; }
+.promo-price-box { background: rgba(255,255,255,0.05); padding: 25px 40px; border-radius: 20px; text-align: center; border: 1px solid rgba(212,175,55,0.3); }
+.promo-price { font-size: 3rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 5px; }
+.promo-personas { font-size: 1.2rem; font-weight: 600; margin-bottom: 5px; }
+.promo-extra { font-size: 0.9rem; opacity: 0.8; margin-bottom: 15px; }
+.promo-time { background: var(--gold); color: var(--forest); display: inline-block; padding: 5px 15px; border-radius: 10px; font-weight: 700; font-size: 0.9rem; }
+.promo-details { margin-bottom: 30px; font-size: 0.95rem; opacity: 0.9; }
+.promo-alert { font-weight: 700; color: #ffcccc; margin-top: 10px; font-size: 1.05rem; }
+.promo-footer { margin-top: 25px; font-style: italic; opacity: 0.8; font-size: 0.95rem; }
+.promo-btn { font-size: 1rem; padding: 1.2rem 3rem; }
 
-/* --- TARJETAS --- */
 .servicios-grid, .paquetes-container { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 40px; }
-.servicio-card, .paquete-card { 
-    background: var(--white); 
-    padding: 40px 25px; 
-    border-radius: 25px; 
-    transition: 0.4s; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
-    text-align: center; 
-    width: 320px; 
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
+.servicio-card, .paquete-card { background: var(--white); padding: 40px 25px; border-radius: 25px; transition: 0.4s; box-shadow: 0 10px 30px rgba(0,0,0,0.03); text-align: center; width: 320px; box-sizing: border-box; display: flex; flex-direction: column; margin-top: 20px; }
+.icon-box { font-size: 3.5rem; color: var(--gold); margin-bottom: 1.5rem; }
+.servicio-card i { color: var(--gold); }
 .servicio-card:hover { background: var(--grad-nature); color: white; transform: translateY(-10px); }
-.icon-box { font-size: 3rem; color: var(--gold); margin-bottom: 1rem; }
-.servicio-card:hover .icon-box { color: var(--white); }
+.servicio-card:hover i, .servicio-card:hover .icon-box { color: white; }
 
-/* --- PAQUETES CON FIX DE ESPACIADO --- */
-.paquetes-container { margin-top: 60px; justify-content: center; align-items: stretch;}
 .paquete-card { position: relative; }
-.paquete-card.destacado { border: 2px solid var(--gold); transform: scale(1.05); z-index: 10; margin-top: 20px; } /* Añadimos margin top compensatorio */
+.paquete-card.destacado { border: 2px solid var(--gold); transform: scale(1.05); z-index: 10; }
 .paquete-tag { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--gold); color: white; padding: 6px 20px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.1); white-space: nowrap; z-index: 11; }
-.precio { font-size: 1.8rem; font-weight: 700; margin: 20px 0; color: var(--forest); }
-.paquete-card ul { list-style: none !important; padding: 0; margin: 10px 0 30px 0; text-align: left; flex-grow: 1; }
-.paquete-card ul li { margin-bottom: 12px; font-size: 0.9rem; display: flex; align-items: center; }
-.fa-check { color: #28a745; margin-right: 12px; }
+.precio { font-size: 2rem; font-weight: 700; margin: 20px 0; color: var(--forest); }
+.paquete-card ul { list-style: none !important; padding: 0; margin: 20px 0 30px 0; text-align: left; flex-grow: 1; }
+.paquete-card ul li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+.fa-check { color: #28a745; font-size: 1rem; }
 .btn-paquete { background: var(--forest); color: white; padding: 12px; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; width: 100%; transition: 0.3s; }
 .btn-paquete:hover { background: var(--gold); }
 
-/* --- GALERÍA --- */
 #image-carousel { width: 100%; visibility: visible !important; }
-.galeria-item { height: 350px; border-radius: 20px; overflow: hidden; position: relative; }
+.galeria-item { height: 400px; border-radius: 20px; overflow: hidden; position: relative; }
 .galeria-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* Capas para que la foto grande no se bloquee */
 .sl-wrapper { z-index: 3000 !important; }
 .sl-overlay { z-index: 2999 !important; }
 .sl-navigation, .sl-close, .sl-counter { z-index: 3001 !important; }
 
-/* --- UBICACIÓN CON DIRECCIÓN EN CÁPSULA Y MARCO --- */
-#ubicacion h2 { margin-bottom: 15px; }
+.address-container { display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: var(--white); padding: 12px 25px; border-radius: 50px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); margin-bottom: 45px; border: 1px solid rgba(212, 175, 55, 0.2); transition: 0.3s; }
+.address-text { font-size: 1.05rem; color: var(--forest); font-weight: 500; }
+.map-container { max-width: 1000px; height: 450px; margin: 0 auto; border-radius: 40px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border: 8px solid var(--white); box-sizing: border-box; }
 
-.address-container {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    background: var(--white);
-    padding: 12px 25px;
-    border-radius: 50px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    margin-bottom: 45px;
-    border: 1px solid rgba(212, 175, 55, 0.2); /* Sutil marco dorado */
-    transition: all 0.3s ease;
-}
-
-.address-container:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-    border-color: var(--gold);
-}
-
-.address-container i { color: var(--gold); font-size: 1.3rem; }
-
-.address-text {
-    font-size: 1.05rem;
-    color: var(--forest);
-    font-weight: 500;
-    letter-spacing: 0.5px;
-}
-
-.map-container {
-    max-width: 1000px;
-    height: 450px;
-    margin: 0 auto;
-    border-radius: 40px; /* Bordes más curvos */
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-    border: 8px solid var(--white); /* Marco blanco elegante */
-    box-sizing: border-box;
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-/* --- CONTACTO --- */
-#contacto { background: var(--grad-nature); color: white; }
+#contacto { background: var(--grad-nature); color: white; padding: 80px 0; }
 .contacto-container { max-width: 600px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); padding: 45px; border-radius: 35px; border: 1px solid rgba(255, 255, 255, 0.1); box-sizing: border-box; text-align: center; }
-
-/* Datos de contacto blancos y legibles */
-.info-contacto-rapida p { 
-    color: #ffffff !important; 
-    font-weight: 500; 
-    margin-bottom: 15px;
-}
-#contacto i { color: var(--gold); }
-
-/* Inputs: Fondo blanco y letra oscura */
-#contacto input, #contacto textarea { 
-    width: 100%; 
-    background: #ffffff !important; 
-    border: none; 
-    padding: 15px; 
-    color: #333333 !important; 
-    margin-bottom: 15px; 
-    border-radius: 12px; 
-    box-sizing: border-box; 
-    font-family: inherit; 
-}
-
+.info-contacto-rapida p { color: #ffffff !important; font-weight: 500; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+#contacto i { color: var(--gold) !important; font-size: 1.2rem; }
+#contacto input, #contacto textarea { width: 100%; background: #ffffff !important; border: none; padding: 18px; color: #222222 !important; margin-bottom: 15px; border-radius: 12px; box-sizing: border-box; font-family: inherit; font-size: 1rem; }
 #contacto input::placeholder, #contacto textarea::placeholder { color: #888888 !important; }
-
-.instagram-link, .instagram-link:visited { color: white !important; text-decoration: none !important; transition: 0.3s; font-weight: 500; }
+.instagram-link, .instagram-link:visited { color: white !important; text-decoration: none !important; }
 .instagram-link:hover { color: var(--gold) !important; }
 
-/* --- WSP --- */
 .wsp-float { position: fixed; bottom: 25px; right: 25px; width: 55px; height: 55px; background: #25d366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 3000; box-shadow: 0 8px 15px rgba(0,0,0,0.2); }
-footer { background: #0e1a14; color: white; text-align: center; padding: 3rem 0; font-size: 0.8rem; opacity: 0.7; }
+footer { background: #0e1a14; color: white; text-align: center; padding: 4rem 0; opacity: 0.7; }
 
-/* --- MÓVIL (LIMPIO Y FUNCIONAL) --- */
 @media (max-width: 768px) {
     header { background: white !important; padding: 10px 0 !important; position: relative !important; width: 100% !important; }
     nav ul { flex-wrap: wrap !important; justify-content: center !important; gap: 10px 15px !important; padding: 5px 15px !important; }
     nav ul li a { color: var(--forest) !important; font-size: 0.75rem !important; font-weight: 700; }
     .servicio-card, .paquete-card { width: 100% !important; transform: none !important; margin-top: 10px !important; }
-    .map-container { height: 300px; border-radius: 20px; border-width: 4px; margin: 0 10px; }
+    .promo-card { padding: 40px 20px; }
+    .promo-grid { flex-direction: column; gap: 20px; }
+    .promo-features { text-align: center; }
+    .promo-features li { justify-content: center; }
+    .promo-card h2 { font-size: 2rem; }
+    .galeria-item { height: 280px; }
 }
