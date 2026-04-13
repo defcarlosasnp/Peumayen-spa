@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peumayén Spa - Linderos</title>
+    <link rel="icon" href="data:,">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -20,6 +21,7 @@
                 <li><a href="#hero">Inicio</a></li>
                 <li><a href="#promo">Promoción</a></li>
                 <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
                 <li><a href="#galeria">Galería</a></li>
                 <li><a href="#ubicacion">Ubicación</a></li>
                 <li><a href="#contacto">Contacto</a></li>
@@ -72,7 +74,7 @@
             </div>
         </section>
 
-        <section id="servicios" class="decorated-section">
+        <section id="servicios" class="decorated-section bg-white">
             <div class="container">
                 <h2 data-aos="fade-up">Experiencias Exclusivas</h2>
                 <div class="servicios-grid">
@@ -100,6 +102,90 @@
                         <div class="icon-box"><i class="fas fa-car"></i></div>
                         <h3>Privacidad</h3>
                         <p>Estacionamiento amplio y seguro.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalogo" class="decorated-section">
+            <div class="container">
+                <h2 data-aos="fade-up">Nuestra Carta de Spa</h2>
+                <div class="flipbook-wrapper" data-aos="zoom-in">
+                    <div id="spa-flipbook">
+                        
+                        <div class="page page-cover page-cover-top" data-density="hard">
+                            <div class="page-content cover-content">
+                                <div class="gold-border">
+                                    <h3 class="cover-title">Peumayén Spa</h3>
+                                    <p class="cover-subtitle">Catálogo de Servicios</p>
+                                    <div class="cover-icon"><i class="fas fa-leaf"></i></div>
+                                    <p class="swipe-hint">Desliza para abrir <i class="fas fa-arrow-right"></i></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="page">
+                            <div class="page-content">
+                                <h3 class="page-title">Bienvenidos</h3>
+                                <div class="page-text">
+                                    <p>En Peumayén Spa, hemos diseñado cada espacio para que te desconectes del estrés de la ciudad sin alejarte demasiado.</p>
+                                    <p>Descubre a continuación nuestras opciones diseñadas para tu descanso.</p>
+                                </div>
+                                <div class="page-decoration"><i class="fas fa-spa"></i></div>
+                            </div>
+                        </div>
+
+                        <div class="page">
+                            <div class="page-content">
+                                <div class="badge-page">Recomendado</div>
+                                <h3 class="page-title">Promo Inauguración</h3>
+                                <div class="page-price">$49.990 <span>/ 2 pers.</span></div>
+                                <ul class="page-list">
+                                    <li><i class="fas fa-check"></i> 3 horas Full Relax</li>
+                                    <li><i class="fas fa-check"></i> Tinaja Caliente</li>
+                                    <li><i class="fas fa-check"></i> Sauna Exclusivo</li>
+                                    <li><i class="fas fa-check"></i> Privacidad Total</li>
+                                </ul>
+                                <button class="btn-paquete" onclick="selectPackage('Promo Inauguración')">Elegir Plan</button>
+                            </div>
+                        </div>
+
+                        <div class="page">
+                            <div class="page-content">
+                                <h3 class="page-title">Día de Campo</h3>
+                                <div class="page-price">$150.000 <span>/ día</span></div>
+                                <ul class="page-list">
+                                    <li><i class="fas fa-check"></i> Acceso a Piscina</li>
+                                    <li><i class="fas fa-check"></i> Áreas Verdes</li>
+                                    <li><i class="fas fa-check"></i> Descanso total</li>
+                                </ul>
+                                <p class="coming-soon">Disponible Próximamente</p>
+                            </div>
+                        </div>
+
+                        <div class="page">
+                            <div class="page-content">
+                                <h3 class="page-title">Fin de Semana Full</h3>
+                                <div class="page-price">$350.000 <span>/ total</span></div>
+                                <ul class="page-list">
+                                    <li><i class="fas fa-check"></i> Día de Campo</li>
+                                    <li><i class="fas fa-check"></i> Tinaja & Sauna</li>
+                                    <li><i class="fas fa-check"></i> Exclusividad</li>
+                                </ul>
+                                <p class="coming-soon">Disponible Próximamente</p>
+                            </div>
+                        </div>
+
+                        <div class="page page-cover page-cover-bottom" data-density="hard">
+                            <div class="page-content cover-content back-cover">
+                                <div class="gold-border">
+                                    <h3 class="cover-title">Tu descanso te espera</h3>
+                                    <p class="cover-subtitle">Linderos, Buin</p>
+                                    <button class="btn-primary" onclick="document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });">Reservar Ahora</button>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -178,6 +264,7 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.3/simple-lightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
 
     <script>
         AOS.init({ duration: 1000, once: true });
@@ -193,6 +280,21 @@
             }).mount();
 
             new SimpleLightbox('.gallery-lightbox a', { overlayOpacity: 0.9, uniqueImages: true });
+
+            // CONFIGURACIÓN DEL LIBRO DIGITAL
+            const flipBook = new St.PageFlip(document.getElementById('spa-flipbook'), {
+                width: 450,
+                height: 600,
+                size: "stretch",
+                minWidth: 300,
+                maxWidth: 1000,
+                minHeight: 400,
+                maxHeight: 1500,
+                maxShadowOpacity: 0.5,
+                showCover: true,
+                mobileScrollSupport: false
+            });
+            flipBook.loadFromHTML(document.querySelectorAll('.page'));
         });
 
         window.addEventListener('scroll', function() {
